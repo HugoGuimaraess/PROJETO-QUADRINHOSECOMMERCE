@@ -1,0 +1,25 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Ambiente virtual
+venv/
+env/
+ENV/
+*.env
+
+# Banco de dados
+*.sqlite3
+
+# Arquivos de log
+*.log
+
+# Arquivos do Django
+*.pot
+*.pyc
+
+# Arquivos de configuração do IDE
+.vscode/
+.idea/

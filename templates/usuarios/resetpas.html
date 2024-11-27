@@ -1,0 +1,7 @@
+{% autoescape off %}
+ hi {{user.username}}
+
+para resetar sua senha, clique no link abaixo:
+https:://{{domain}}{{url 'resetpassword' uidb64=uid token=token}}
+
+{% endautoescape %}

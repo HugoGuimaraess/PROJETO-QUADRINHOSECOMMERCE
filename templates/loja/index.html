@@ -1,0 +1,297 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Slick Carousel -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+
+
+
+<!-- ========================= SECTION MAIN ========================= -->
+<section class="section-intro padding-y-sm">
+<div class="container">
+
+<section class="section-intro padding-y-sm">
+<div class="container">
+
+
+
+
+<div class="intro-banner-wrap">
+  <div class="slick-carousel">
+    <div><img src="{% static 'images/banners/1.jpg' %}" alt="Banner 1"></div>
+    <div><img src="{% static 'images/banners/1.jpg' %}" alt="Banner 2"></div>
+    <div><img src="{% static 'images/banners/1.jpg' %}" alt="Banner 3"></div>
+    <!-- Adicione mais imagens conforme necessário -->
+  </div>
+</div>
+
+<script>
+  // Inicialização do Slick Carousel
+  $(document).ready(function(){
+    $('.slick-carousel').slick({
+      autoplay: true, // Auto reprodução
+      autoplaySpeed: 2000, // Intervalo de tempo entre os slides em milissegundos
+      dots: true, // Mostrar os indicadores de pontos
+      arrows: true, // Mostrar as setas de navegação
+      infinite: true, // Carrossel infinito
+      speed: 500, // Velocidade da transição entre slides em milissegundos
+      slidesToShow: 1, // Número de slides a serem exibidos ao mesmo tempo
+      slidesToScroll: 1 // Número de slides a serem rolados por vez
+    });
+  });
+</script>
+
+
+</div> <!-- container //  -->
+</section>
+
+<header class="section-heading">
+	<h3 class="section-title">Principais Categorias</h3>
+</header><!-- sect-heading -->
+
+<div class="row">
+	<div class="col-md-3">
+		<div class="card card-product-grid">
+			<a href="{% url 'filtro' 'MARVEL' %}" class="img-wrap"> <img src="{% static 'images/items/23.png' %}"> </a>
+			<figcaption class="info-wrap">
+				<a href="./product-detail.html" class="title">Marvel Comics</a>
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+
+		<div class="col-md-3">
+		<div class="card card-product-grid">
+			<a href="{% url 'filtro' 'DC' %}" class="img-wrap"> <img src="{% static 'images/items/14.jpeg' %}"> </a>
+			<figcaption class="info-wrap">
+				<a href="./product-detail.html" class="title">DC Comics</a>
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+
+		<div class="col-md-3">
+		<div class="card card-product-grid">
+			<a href="{% url 'filtro' 'IMAGE COMICS' %}" class="img-wrap"> <img src="{% static 'images/items/15.png' %}"> </a>
+			<figcaption class="info-wrap">
+				<a href="./product-detail.html" class="title">Image Comics</a>
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+
+		<div class="col-md-3">
+		<div class="card card-product-grid">
+			<a href="{% url 'filtro' 'CGC' %}" class="img-wrap"> <img src="{% static 'images/items/35.png' %}"> </a>
+			<figcaption class="info-wrap">
+				<a href="./product-detail.html" class="title">CGC Grading Comics</a>
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+
+
+</div>
+
+
+
+
+
+</div> <!-- container //  -->
+</section>
+
+
+<!-- ========================= SECTION MAIN END// ========================= -->
+
+<!-- ========================= SECTION  ========================= -->
+<section class="section-name padding-y-sm">
+<div class="container">
+
+<header class="section-heading">
+	<a href="./store.html" class="btn btn-outline-primary float-right">See all</a>
+	<h3 class="section-title">Popular products</h3>
+</header><!-- sect-heading -->
+
+
+<div class="row">
+	{% for quadrinhos in cards %}
+	<div class="col-md-3">
+		<figure class="card card-product-grid">
+			<div class="img-wrap">
+				{% if quadrinhos.foto == '' or quadrinhos.foto == null %}
+					<a href="{% url 'imagem' quadrinhos.id %}" class="img-wrap"> <img src="{% static 'images/items/not-found.png' %}"> </a>
+				{% else %}
+					<a href="{% url 'imagem' quadrinhos.id %}" class="img-wrap"> <img src="{{quadrinhos.foto.url}}"> </a>
+				{% endif %}
+			</div> <!-- img-wrap.// -->
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<a href="./product-detail.html" class="title">{{quadrinhos.quadrinho}}</a>
+					<div class="price-wrap mt-2">
+						<span class="price">R${{quadrinhos.preco}}</span>
+						<del class="price-old">$1980</del>
+					</div> <!-- price-wrap.// -->
+				</div>
+				{% if quadrinhos.stock <= 1 %}
+					<p>Out of Stock</p>
+				{% else %}
+					<a href="#" class="btn btn-block btn-primary">Add to cart </a>
+				{% endif %}
+			</figcaption>
+		</figure>
+	</div> <!-- col.// -->
+	{% endfor %}
+</div>
+
+
+
+<header class="section-heading">
+	<a href="./store.html" class="btn btn-outline-primary float-right">See all</a>
+	<h3 class="section-title">Pre-sailing products</h3>
+</header><!-- sect-heading -->
+
+
+<div class="row">
+	{% for quadrinhos_prevenda in cards2 %}
+	<div class="col-md-3">
+		<figure class="card card-product-grid">
+			<div class="img-wrap">
+				{% if quadrinhos_prevenda.foto == '' or quadrinhos_prevenda.foto == null %}
+					<a href="{% url 'imagem' quadrinhos_prevenda.id %}" class="img-wrap"> <img src="{% static 'images/items/not-found.png' %}"> </a>
+				{% else %}
+					<a href="{% url 'imagem' quadrinhos_prevenda.id %}" class="img-wrap"> <img src="{{quadrinhos_prevenda.foto.url}}"> </a>
+				{% endif %}
+			</div> <!-- img-wrap.// -->
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<a href="./product-detail.html" class="title">{{quadrinhos_prevenda.quadrinho}}</a>
+					<div class="price-wrap mt-2">
+						<span class="price">{{quadrinhos_prevenda.preco}}</span>
+						<del class="price-old">$1980</del>
+					</div> <!-- price-wrap.// -->
+				</div>
+				{% if quadrinhos_prevenda.stock <= 1 %}
+					<p>Out of Stock</p>
+				{% else %}
+					<a href="#" class="btn btn-block btn-primary">Add to cart </a>
+				{% endif %}
+			</figcaption>
+		</figure>
+	</div> <!-- col.// -->
+	{% endfor %}
+</div>
+
+
+<header class="section-heading">
+	<a href="./store.html" class="btn btn-outline-primary float-right">See all</a>
+	<h3 class="section-title">Navegue por personagens</h3>
+</header><!-- sect-heading -->
+
+
+
+
+<div class="row">
+	<div class="col-md-2">
+		<div class="card card-product-grid">
+			<a href="{% url 'filtro' 'MARVEL' %}" class="img-wrap"> <img src="{% static 'images/items/batman.png' %}"> </a>
+			<figcaption class="info-wrap">
+				<a href="./product-detail.html" class="title">Marvel Comics</a>
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+
+		<div class="col-md-2">
+		<div class="card card-product-grid">
+			<a href="{% url 'filtro' 'DC' %}" class="img-wrap"> <img src="{% static 'images/items/hulk.jpeg' %}"> </a>
+			<figcaption class="info-wrap">
+				<a href="./product-detail.html" class="title">DC Comics</a>
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+
+		<div class="col-md-2">
+		<div class="card card-product-grid">
+			<a href="{% url 'filtro' 'IMAGE COMICS' %}" class="img-wrap"> <img src="{% static 'images/items/super.jpeg' %}"> </a>
+			<figcaption class="info-wrap">
+				<a href="./product-detail.html" class="title">Image Comics</a>
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+
+		<div class="col-md-2">
+		<div class="card card-product-grid">
+			<a href="{% url 'filtro' 'CGC' %}" class="img-wrap"> <img src="{% static 'images/items/flash.jpeg' %}"> </a>
+			<figcaption class="info-wrap">
+				<a href="./product-detail.html" class="title">CGC Grading Comics</a>
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+		<div class="col-md-2">
+		<div class="card card-product-grid">
+			<a href="{% url 'filtro' 'CGC' %}" class="img-wrap"> <img src="{% static 'images/items/spider.jpeg' %}"> </a>
+			<figcaption class="info-wrap">
+				<a href="./product-detail.html" class="title">CGC Grading Comics</a>
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+		<div class="col-md-2">
+		<div class="card card-product-grid">
+			<a href="{% url 'filtro' 'CGC' %}" class="img-wrap"> <img src="{% static 'images/items/rafael.png' %}"> </a>
+			<figcaption class="info-wrap">
+				<a href="./product-detail.html" class="title">CGC Grading Comics</a>
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+		<div class="col-md-2">
+		<div class="card card-product-grid">
+			<a href="{% url 'filtro' 'CGC' %}" class="img-wrap"> <img src="{% static 'images/items/rafael.png' %}"> </a>
+			<figcaption class="info-wrap">
+				<a href="./product-detail.html" class="title">CGC Grading Comics</a>
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+		<div class="col-md-2">
+		<div class="card card-product-grid">
+			<a href="{% url 'filtro' 'CGC' %}" class="img-wrap"> <img src="{% static 'images/items/rafael.png' %}"> </a>
+			<figcaption class="info-wrap">
+				<a href="./product-detail.html" class="title">CGC Grading Comics</a>
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+		<div class="col-md-2">
+		<div class="card card-product-grid">
+			<a href="{% url 'filtro' 'CGC' %}" class="img-wrap"> <img src="{% static 'images/items/rafael.png' %}"> </a>
+			<figcaption class="info-wrap">
+				<a href="./product-detail.html" class="title">CGC Grading Comics</a>
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- container // -->
+</section>
+<!-- ========================= SECTION  END// ========================= -->
+
+
+
+
+
+
+</body>
+</html>
+{% endblock %}
