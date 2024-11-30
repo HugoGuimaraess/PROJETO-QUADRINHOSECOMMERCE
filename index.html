@@ -111,13 +111,12 @@ $(document).ready(function() {
 						<div>
 							<a href="{% url 'login' %}">Login</a> <span class="dark-transp"> | </span>
 							<a href="{% url 'cadastro' %}"> Cadastro</a>
-							{% include 'partials/_alertas.html' %}
 						</div>
 					</div>
 					
 				<a href="{% url 'carrinho' %}" class="widget-header pl-3 ml-3">
 					<div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></div>
-					<span class="badge badge-pill badge-danger notify">{{cart_count}}</span>
+					<span class="badge badge-pill badge-danger notify">0</span>
 				</a>
 				</div> <!-- widgets-wrap.// -->
 			</div> <!-- col.// -->
