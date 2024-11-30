@@ -1,4 +1,4 @@
-{% load static %}
+
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -41,8 +41,7 @@ $(document).ready(function() {
 
 </head>
 <body>
-{% load static %}
-{% block content %}
+
 
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -95,7 +94,7 @@ $(document).ready(function() {
 </section>
 
 
-{% load static %}
+
 <header class="section-header">
 <nav class="navbar p-md-0 navbar-expand-sm navbar-light border-bottom">
 <div class="container">
@@ -206,7 +205,7 @@ $(document).ready(function() {
 <div class="row">
 	<div class="col-md-3">
 		<div class="card card-product-grid">
-			<a href="{% url 'filtro' 'MARVEL' %}" class="img-wrap"> <img src="{% static 'images/items/23.png' %}"> </a>
+			<a href="{% url 'filtro' 'MARVEL' %}" class="img-wrap"> <img src="static/images/items/23.png"> </a>
 			<figcaption class="info-wrap">
 				<a href="./product-detail.html" class="title">Marvel Comics</a>
 			</figcaption>
@@ -215,7 +214,7 @@ $(document).ready(function() {
 
 		<div class="col-md-3">
 		<div class="card card-product-grid">
-			<a href="{% url 'filtro' 'DC' %}" class="img-wrap"> <img src="{% static 'images/items/14.jpeg' %}"> </a>
+			<a href="{% url 'filtro' 'DC' %}" class="img-wrap"> <img src="static/images/items/14.jpeg"> </a>
 			<figcaption class="info-wrap">
 				<a href="./product-detail.html" class="title">DC Comics</a>
 			</figcaption>
@@ -224,7 +223,7 @@ $(document).ready(function() {
 
 		<div class="col-md-3">
 		<div class="card card-product-grid">
-			<a href="{% url 'filtro' 'IMAGE COMICS' %}" class="img-wrap"> <img src="{% static 'images/items/15.png' %}"> </a>
+			<a href="{% url 'filtro' 'IMAGE COMICS' %}" class="img-wrap"> <img src="static/images/items/15.png"> </a>
 			<figcaption class="info-wrap">
 				<a href="./product-detail.html" class="title">Image Comics</a>
 			</figcaption>
@@ -233,7 +232,7 @@ $(document).ready(function() {
 
 		<div class="col-md-3">
 		<div class="card card-product-grid">
-			<a href="{% url 'filtro' 'CGC' %}" class="img-wrap"> <img src="{% static 'images/items/35.png' %}"> </a>
+			<a href="{% url 'filtro' 'CGC' %}" class="img-wrap"> <img src="static/images/items/35.png"> </a>
 			<figcaption class="info-wrap">
 				<a href="./product-detail.html" class="title">CGC Grading Comics</a>
 			</figcaption>
@@ -343,7 +342,7 @@ $(document).ready(function() {
 <div class="row">
 	<div class="col-md-2">
 		<div class="card card-product-grid">
-			<a href="{% url 'filtro' 'MARVEL' %}" class="img-wrap"> <img src="{% static 'images/items/batman.png' %}"> </a>
+			<a href="{% url 'filtro' 'MARVEL' %}" class="img-wrap"> <img src="static/images/items/batman.png"> </a>
 			<figcaption class="info-wrap">
 				<a href="./product-detail.html" class="title">Marvel Comics</a>
 			</figcaption>
@@ -352,7 +351,7 @@ $(document).ready(function() {
 
 		<div class="col-md-2">
 		<div class="card card-product-grid">
-			<a href="{% url 'filtro' 'DC' %}" class="img-wrap"> <img src="{% static 'images/items/hulk.jpeg' %}"> </a>
+			<a href="{% url 'filtro' 'DC' %}" class="img-wrap"> <img src="static/images/items/hulk.jpeg"> </a>
 			<figcaption class="info-wrap">
 				<a href="./product-detail.html" class="title">DC Comics</a>
 			</figcaption>
@@ -361,7 +360,7 @@ $(document).ready(function() {
 
 		<div class="col-md-2">
 		<div class="card card-product-grid">
-			<a href="{% url 'filtro' 'IMAGE COMICS' %}" class="img-wrap"> <img src="{% static 'images/items/super.jpeg' %}"> </a>
+			<a href="{% url 'filtro' 'IMAGE COMICS' %}" class="img-wrap"> <img src="static/images/items/super.jpeg"> </a>
 			<figcaption class="info-wrap">
 				<a href="./product-detail.html" class="title">Image Comics</a>
 			</figcaption>
@@ -370,7 +369,7 @@ $(document).ready(function() {
 
 		<div class="col-md-2">
 		<div class="card card-product-grid">
-			<a href="{% url 'filtro' 'CGC' %}" class="img-wrap"> <img src="{% static 'images/items/flash.jpeg' %}"> </a>
+			<a href="{% url 'filtro' 'CGC' %}" class="img-wrap"> <img src="static/images/items/flash.jpeg"> </a>
 			<figcaption class="info-wrap">
 				<a href="./product-detail.html" class="title">CGC Grading Comics</a>
 			</figcaption>
@@ -378,7 +377,7 @@ $(document).ready(function() {
 	</div> <!-- col.// -->
 		<div class="col-md-2">
 		<div class="card card-product-grid">
-			<a href="{% url 'filtro' 'CGC' %}" class="img-wrap"> <img src="{% static 'static/images/items/spider.jpeg' %}"> </a>
+			<a href="{% url 'filtro' 'CGC' %}" class="img-wrap"> <img src="static/static/images/items/spider.jpeg"> </a>
 			<figcaption class="info-wrap">
 				<a href="./product-detail.html" class="title">CGC Grading Comics</a>
 			</figcaption>
@@ -386,7 +385,7 @@ $(document).ready(function() {
 	</div> <!-- col.// -->
 		<div class="col-md-2">
 		<div class="card card-product-grid">
-			<a href="{% url 'filtro' 'CGC' %}" class="img-wrap"> <img src="{% static 'images/items/rafael.png' %}"> </a>
+			<a href="{% url 'filtro' 'CGC' %}" class="img-wrap"> <img src="static/images/items/rafael.png"> </a>
 			<figcaption class="info-wrap">
 				<a href="./product-detail.html" class="title">CGC Grading Comics</a>
 			</figcaption>
@@ -394,7 +393,7 @@ $(document).ready(function() {
 	</div> <!-- col.// -->
 		<div class="col-md-2">
 		<div class="card card-product-grid">
-			<a href="{% url 'filtro' 'CGC' %}" class="img-wrap"> <img src="{% static 'images/items/rafael.png' %}"> </a>
+			<a href="{% url 'filtro' 'CGC' %}" class="img-wrap"> <img src="static/images/items/rafael.png"> </a>
 			<figcaption class="info-wrap">
 				<a href="./product-detail.html" class="title">CGC Grading Comics</a>
 			</figcaption>
@@ -402,7 +401,7 @@ $(document).ready(function() {
 	</div> <!-- col.// -->
 		<div class="col-md-2">
 		<div class="card card-product-grid">
-			<a href="{% url 'filtro' 'CGC' %}" class="img-wrap"> <img src="{% static 'images/items/rafael.png' %}"> </a>
+			<a href="{% url 'filtro' 'CGC' %}" class="img-wrap"> <img src="static/images/items/rafael.png"> </a>
 			<figcaption class="info-wrap">
 				<a href="./product-detail.html" class="title">CGC Grading Comics</a>
 			</figcaption>
@@ -410,7 +409,7 @@ $(document).ready(function() {
 	</div> <!-- col.// -->
 		<div class="col-md-2">
 		<div class="card card-product-grid">
-			<a href="{% url 'filtro' 'CGC' %}" class="img-wrap"> <img src="{% static 'images/items/rafael.png' %}"> </a>
+			<a href="{% url 'filtro' 'CGC' %}" class="img-wrap"> <img src="static/images/items/rafael.png"> </a>
 			<figcaption class="info-wrap">
 				<a href="./product-detail.html" class="title">CGC Grading Comics</a>
 			</figcaption>
@@ -421,6 +420,26 @@ $(document).ready(function() {
 
 
 
+<!-- ========================= FOOTER ========================= -->
+<footer class="section-footer border-top">
+	<div class="container">
+		<section class="footer-bottom border-top row">
+			<div class="col-md-2">
+				<p class="text-muted"> &copy 2023 Comics do huguinho </p>
+			</div>
+			<div class="col-md-8 text-md-center">
+				<span  class="px-2">comics.huguinho@outlook.com</span>
+				<span  class="px-2">+879-332-9375</span>
+				<span  class="px-2">Street name 123, Avanue abc</span>
+			</div>
+			<div class="col-md-2 text-md-right text-muted">
+				<i class="fab fa-lg fa-cc-visa"></i>
+				<i class="fab fa-lg fa-cc-paypal"></i>
+				<i class="fab fa-lg fa-cc-mastercard"></i>
+			</div>
+		</section>
+	</div><!-- //container -->
+</footer>
 
 
 
