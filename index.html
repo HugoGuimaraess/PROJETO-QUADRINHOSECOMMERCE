@@ -252,15 +252,19 @@ $(document).ready(function() {
 
 
 <div class="row">
-	{% for quadrinhos in cards %}
 	<div class="col-md-3">
 		<figure class="card card-product-grid">
 			<div class="img-wrap">
-				{% if quadrinhos.foto == '' or quadrinhos.foto == null %}
-					<a href="{% url 'imagem' quadrinhos.id %}" class="img-wrap"> <img src="{% static 'images/items/not-found.png' %}"> </a>
-				{% else %}
-					<a href="{% url 'imagem' quadrinhos.id %}" class="img-wrap"> <img src="{{quadrinhos.foto.url}}"> </a>
-				{% endif %}
+				<a href="#" class="img-wrap"> <img src="static/images/items/flash.jpeg"> </a>	
+				<a href="#" class="img-wrap"> <img src="static/images/items/flash.jpeg"> </a>	
+				<a href="#" class="img-wrap"> <img src="static/images/items/flash.jpeg"> </a>	
+				<a href="#" class="img-wrap"> <img src="static/images/items/flash.jpeg"> </a>	
+				<a href="#" class="img-wrap"> <img src="static/images/items/flash.jpeg"> </a>	
+				<a href="#" class="img-wrap"> <img src="static/images/items/flash.jpeg"> </a>	
+				<a href="#" class="img-wrap"> <img src="static/images/items/flash.jpeg"> </a>	
+				<a href="#" class="img-wrap"> <img src="static/images/items/flash.jpeg"> </a>	
+				<a href="#" class="img-wrap"> <img src="static/images/items/flash.jpeg"> </a>	
+				<a href="#" class="img-wrap"> <img src="static/images/items/flash.jpeg"> </a>	
 			</div> <!-- img-wrap.// -->
 			<figcaption class="info-wrap">
 				<div class="fix-height">
@@ -268,17 +272,13 @@ $(document).ready(function() {
 					<div class="price-wrap mt-2">
 						<span class="price">R${{quadrinhos.preco}}</span>
 						<del class="price-old">$1980</del>
+						<a href="#" class="btn btn-block btn-primary">Add to cart </a>
 					</div> <!-- price-wrap.// -->
 				</div>
-				{% if quadrinhos.stock <= 1 %}
-					<p>Out of Stock</p>
-				{% else %}
-					<a href="#" class="btn btn-block btn-primary">Add to cart </a>
-				{% endif %}
 			</figcaption>
 		</figure>
 	</div> <!-- col.// -->
-	{% endfor %}
+	
 </div>
 
 
